@@ -1,9 +1,11 @@
-print("joe mother")
-print("bryan is joe mother")
-print("que te gusta hacer?")
-print("Donda esta el milk")
-print("Jake gets no bitches")
-print("Donde esta el leche")
+"""
+Full Name:
+ID:
+Date: 9-28-22
+Filename: A1_Lastname_Firstname_abc1234
+Purpose: compare elements in a list using two for loops
+"""
+
 
 def count(lst, num):
     counter = 0
@@ -28,10 +30,31 @@ def max_min(lst):
     return output
 
 
+def window(lst, w, start):
+    biggest = 0
+    for i in range(start, start+w):
+        if lst[i] > biggest:
+            biggest = lst[i]
+    return biggest
+
+
+def shift_lst(lst, w):
+    new_lst = []
+    for i in range(len(lst)-w+1):
+        biggest = window(lst, w, i)
+        new_lst = new_lst + [biggest]
+    return new_lst
+
+
 def main():
-    lst = [10, 30, 60, 88, 10, 30, 10, 60, 3, 88]
-    output = max_min(lst)
+    lst1 = [10, 30, 60, 88, 10, 30, 10, 60, 3, 88]
+    output = max_min(lst1)
     print(output)
+
+    lst2 = [1, 3, 5, 1, 2, 4, 7, 8]
+    w = 4
+    result = shift_lst(lst2, w)
+    print(result)
 
 
 main()
