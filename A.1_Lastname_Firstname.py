@@ -1,8 +1,8 @@
 """
-Full Name:
-ID:
+Full Name: Jacob Meyer
+ID: jrm7250
 Date: 9-28-22
-Filename: A1_Lastname_Firstname_abc1234
+Filename: A1_Jacob_Meyer_jrm7250
 Purpose: compare elements in a list using two for loops
 """
 
@@ -51,10 +51,20 @@ def main():
     output = max_min(lst1)
     print(output)
 
+    lst2 = [2, 5, 12, 3, 4]
+    w = 2
+    result1 = shift_lst(lst2, w)
+    print(result1)
+
     lst2 = [1, 3, 5, 1, 2, 4, 7, 8]
     w = 4
-    result = shift_lst(lst2, w)
-    print(result)
+    result2 = shift_lst(lst2, w)
+    print(result2)
+
+    lst2 = [1, 3, 0, 3, 5, 3, 6, 2, 8]
+    w = 3
+    result3 = shift_lst(lst2, w)
+    print(result3)
 
 
 main()
