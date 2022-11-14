@@ -1,5 +1,6 @@
 """
 Full Name: Jacob Meyer
+Group Names: Jacob Meyer, Bryan Nguyen, Janel Nguyen
 ID: jrm7250
 Date: 9-28-22
 Filename: A1_Jacob_Meyer_jrm7250
@@ -31,7 +32,7 @@ def max_min(lst):
 
 
 def window(lst, w, start):
-    biggest = 0
+    biggest = lst[start]
     for i in range(start, start+w):
         if lst[i] > biggest:
             biggest = lst[i]
@@ -61,10 +62,11 @@ def main():
     result2 = shift_lst(lst2, w)
     print(result2)
 
-    lst2 = [1, 3, 0, 3, 5, 3, 6, 2, 8]
+    lst2 = [-2, -9, -1, -4, 33, 11, 65, -4, 99]
     w = 3
     result3 = shift_lst(lst2, w)
     print(result3)
+
 
 
 main()
