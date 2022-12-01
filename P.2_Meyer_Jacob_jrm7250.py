@@ -58,6 +58,7 @@ def write_to_csv(filename, info):
     outfile.close()
 
 
+# 2D LIST FORMAT: [["Line", "Word#"...], [word, occurrences, line, word#], [word, occurrences, line, word#]...]
 def main():
     lst = create_lst("project.txt")
     info = get_word_info(lst)
