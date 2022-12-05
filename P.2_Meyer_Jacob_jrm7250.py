@@ -46,23 +46,45 @@ def get_word_info(lst):
     return info_lst
 
 
-def write_to_csv(filename, info):
+def write_to_csv(filename, info_lst):
     outfile = open(filename, "w")
     # Iterate linearly through the 2D list and write to the CSV
-    for i in range(len(info)):
-        for j in range(len(info[i])):
-            if j == len(info[i]) - 1:
-                outfile.write(str(info[i][j]) + "\n")
+    for i in range(len(info_lst)):
+        for j in range(len(info_lst[i])):
+            if j == len(info_lst[i]) - 1:
+                outfile.write(str(info_lst[i][j]) + "\n")
             else:
-                outfile.write(str(info[i][j]) + ",")
+                outfile.write(str(info_lst[i][j]) + ",")
     outfile.close()
+
+
+def entire_map(info_table):
+    for i in range(1, len(info_table)):
+        for j in range(len(info_table[i])):
+            print(info_table[i][j], end=" ")
+        print()
+
+
+def get_value(key, info_table):
+    value_lst = []
+    for i in range(1, len(info_table)):
+        for j in range(1, len(info_table[i])):
+            if key == info_table[i][0]:
+                value_lst += [info_table[i][j]]
+    if len(value_lst) != 0:
+        return value_lst
+    else:
+        return -1
 
 
 # 2D LIST FORMAT: [["Line", "Word#"...], [word, occurrences, line, word#], [word, occurrences, line, word#]...]
 def main():
     lst = create_lst("project.txt")
-    info = get_word_info(lst)
-    write_to_csv("project.cvs", info)
+    info_lst = get_word_info(lst)
+    write_to_csv("project.cvs", info_lst)
+    entire_map(info_lst)
+    value_lst = get_value("CMPSC131", info_lst)
+    print(value_lst)
 
 
 main()
