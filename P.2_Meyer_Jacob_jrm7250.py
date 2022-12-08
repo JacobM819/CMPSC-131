@@ -61,7 +61,8 @@ def write_to_csv(filename, info_lst):
 def entire_map(info_table):
     for i in range(1, len(info_table)):
         for j in range(len(info_table[i])):
-            print(info_table[i][j], end=" ")
+            # print(info_table[i][j], end=" ")
+            pass
         print()
 
 
@@ -77,14 +78,60 @@ def get_value(key, info_table):
         return -1
 
 
+def get_location(key, occurrence, info_table):
+    location_lst = []
+    for i in range(1, len(info_table)):
+        if key == info_table[i][0] and occurrence+3 < len(info_table[i]):
+            location_lst += [info_table[i][occurrence+1], info_table[i][occurrence+2]]
+    if len(location_lst) != 0:
+        return location_lst
+    else:
+        return -1
+
+
+# Not finished
+def delete_table(info_table):
+    empty_lst = [[]]
+    return empty_lst
+
+
+def delete_entry(info_table, key):
+    info_copy1 = info_table
+    for i in range(len(info_copy1)):
+        if info_copy1[i][0] == key and i != 0:
+            info_copy1[i] = [key]
+    return info_copy1
+
+
+# Not finished
+def delete_location(info_table, key, occurrence):
+    info_copy2 = []
+    return info_copy2
+
+
 # 2D LIST FORMAT: [["Line", "Word#"...], [word, occurrences, line, word#], [word, occurrences, line, word#]...]
 def main():
     lst = create_lst("project.txt")
     info_lst = get_word_info(lst)
     write_to_csv("project.cvs", info_lst)
     entire_map(info_lst)
+    location_lst = get_location("CMPSC131", 2, info_lst)
+    print(location_lst)
+
     value_lst = get_value("CMPSC131", info_lst)
-    print(value_lst)
+    # print(value_lst)
+
+
+# Not finished
+    empty_lst = delete_table(info_lst)
+    # print(empty_lst)
+
+    info_copy1 = delete_entry(info_lst, "course")
+    # print("info_copy1:", info_copy1)
+
+# Not finished
+    info_copy2 = delete_location(info_lst, "CMPSC131", 1)
+    # print(info_copy2)
 
 
 main()
