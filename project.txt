@@ -1,4 +1,2 @@
-Dan Kahn teaches the course CMPSC131
-CMPSC131 is an important course course
-Hello World
-CMPSC131
+Sam Mead teaches the course CMPSC131
+CMPSC131 is an important course

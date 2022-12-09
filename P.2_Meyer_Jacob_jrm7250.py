@@ -1,10 +1,10 @@
 """
-Full Name: Jacob Meyer
+Full Name:
 Group Names: Bryan Nguyen, Janel Nguyen, Jacob Meyer
-ID: jrm7250
-Date: 11-17-22
-Filename: P.1_Meyer_Jacob_jrm7250
-Purpose: implement all the concepts learned in this course
+ID:
+Date: 12-9-22
+Filename: P.2_Lastname_Firstname_id
+Purpose: Run multiple search operations on the word-information-table previously implemented in Project 1
 """
 
 
@@ -51,8 +51,6 @@ def write_to_csv(filename, info_lst):
     info_lst = [["Word", "Occurrences"]] + info_lst
     for i in range(max_occurrence):
         info_lst[0] += ["Line", "Word #"]
-
-    print(info_lst)
 
     # Iterate linearly through the 2D list and write to the CSV
     for i in range(len(info_lst)):
@@ -134,22 +132,22 @@ def main():
     lst = create_lst("project.txt")
     info_lst = get_word_info(lst)
     write_to_csv("project.cvs", info_lst)
-    #
-    # entire_map(info_lst)
-    # value_lst = get_value("tea", info_lst)
-    # print(value_lst)
-    #
-    location = get_location("CMPSC131", 3, info_lst)
+
+    entire_map(info_lst)
+    value_lst = get_value("Mead", info_lst)
+    print(value_lst)
+
+    location = get_location("CMPSC131", 2, info_lst)
     print(location)
-    #
-    # info_copy1 = delete_table(info_lst)
-    # print(info_copy1)
-    #
-    # info_copy2 = delete_entry(info_lst, "course")
-    # print(info_copy2)
-    #
-    # info_copy3 = delete_location("CMPSC131", 1, info_lst)
-    # print(info_copy3)
+
+    info_copy1 = delete_table(info_lst)
+    print(info_copy1)
+
+    info_copy2 = delete_entry(info_lst, "course")
+    print(info_copy2)
+
+    info_copy3 = delete_location("CMPSC131", 1, info_lst)
+    print(info_copy3)
 
 
 main()
